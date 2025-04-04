@@ -6,7 +6,6 @@ wandb
 *.pdf
 *.out
 *.wav
-*.ckpt
 *.tlog
 tmp*
 .idea
