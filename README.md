@@ -2,6 +2,8 @@
 
 This repository contains code to train, validate, and evaluate a neural network-based observation filter for virtual sensing in local active noise control. This approach is submitted at the Forum Acusticum 2025 in Malaga, Spain.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15147273.svg)](https://doi.org/10.5281/zenodo.15147273)
+
 ## Background
 
 The remote microphone technique (RMT) [1] is a widely used technique in active noise control to estimate the error signal at a virtual error microphone at the point of cancellation using nearby remote microphones. The key component is the so-called "observation filter", which estimated the primary disturbances at the virtual error microphone.
