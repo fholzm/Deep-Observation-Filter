@@ -1,0 +1,27 @@
+### Model parameters ###
+samplerate = 16000
+
+### Data ###
+data.directory = "path/to/dataset/static_scene_varpos"
+data.train_split = 0.8
+data.nsrcrange = [1, 1]
+data.gainrange = [-40, -10]
+data.noise_exponentrange = [0.0, 2.0]
+data.length = 10
+data.nscenes = 50000
+data.seed = 42
+data.c = 343
+
+### Geometrical configureation ###
+# Tetrahedral microphone array
+remote_mic.position = [[1, 1, 1],
+                       [1, -1, -1],
+                       [-1, 1, -1],
+                       [-1, -1, 1]]
+remote_mic.scale = 0.1
+
+virtual_mic.position = [0.0, 0.0, 0.0]
+virtual_mic.radiusrange.train = [0.0, 0.05]
+virtual_mic.radiusrange.valid = [0.0, 0.05]
+
+source.distance = 1.0

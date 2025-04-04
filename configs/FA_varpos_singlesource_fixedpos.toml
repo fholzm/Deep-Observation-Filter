@@ -1,0 +1,65 @@
+### Model parameters ###
+samplerate = 16000
+nfft = 128
+
+model.name = "ConvolutionalObervationFilter_FA"
+model.hidden_units = 256
+model.correlator = "phat"
+model.corr_beta=0.01
+model.activation = "leakyrelu"
+model.hopsize = 64
+model.delay = 25
+
+### Training parameters ###
+train.batch_size = 100
+train.num_process = 10
+train.optimizer = "adam"
+train.lr = 0.0001
+train.dropout = 0.0
+train.weight_decay = 1e-8
+train.seed = 4
+train.max_epochs = 1000
+train.optimization_interval = 125
+train.frames_per_cc = 125
+train.normalized_loss = true
+train.fixed_position = true
+
+### Validation parameters
+valid.batch_size = 100
+valid.num_process = 10
+valid.seed = 76
+valid.only = true
+valid.export_metrics = false
+valid.export_path = "export"
+valid.eval_radius = [[0.0, 0.01],
+                     [0.01, 0.02],
+                     [0.02, 0.03],
+                     [0.03, 0.04],
+                     [0.04, 0.05]]
+valid.inference_interval = 125
+valid.frames_per_cc = 125
+valid.psd_nfft = 1024
+valid.debug_audio = true
+valid.fixed_position = true
+
+### Paths ###
+tensorboard_path = "tensorboard"
+checkpoint_path = "checkpoints"
+filename = "FA_varpos_singlesource_fixedpos"
+N_log_epochs = 8
+
+### Data ###
+data.directory = "path/to/dataset/static_scene_varpos"
+data.c = 343
+
+cuda_visible_devices = "0"
+
+### Geometrical configureation ###
+# Tetrahedral microphone array
+remote_mic.position = [[1, 1, 1],
+                       [1, -1, -1],
+                       [-1, 1, -1],
+                       [-1, -1, 1]]
+remote_mic.scale = 0.1
+
+virtual_mic.position = [0.0, 0.0, 0.0]
